@@ -1,6 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
+    console.log("event triggered");
+  };
   return (
     <section className="dark:bg-gray-800 dark:text-gray-100">
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
@@ -15,9 +20,9 @@ const Login = () => {
           <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
           <p className="text-sm text-center dark:text-gray-400">
             Don't have account?
-            <a href="#" rel="noopener noreferrer" className="focus:underline underline">
-              ..Sign up here
-            </a>
+            <Link to="/signup" className="m-2 focus:underline underline">
+              Sign up here
+            </Link>
           </p>
           <div className="my-6 space-y-4">
             <button
@@ -40,7 +45,12 @@ const Login = () => {
             <p className="px-3 dark:text-gray-400">OR</p>
             <hr className="w-full dark:text-gray-400" />
           </div>
-          <form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+          <form
+            onSubmit={handleLogin}
+            novalidate=""
+            action=""
+            className="space-y-8 ng-untouched ng-pristine ng-valid"
+          >
             <div className="space-y-4">
               <div className="space-y-2">
                 <label for="email" className="block text-sm">
@@ -52,6 +62,7 @@ const Login = () => {
                   id="email"
                   placeholder="leroy@jenkins.com"
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-amber-400"
+                  required
                 />
               </div>
               <div className="space-y-2">
@@ -66,12 +77,13 @@ const Login = () => {
                   id="password"
                   placeholder="*****"
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-amber-400"
+                  required
                 />
               </div>
             </div>
             <button
-              type="button"
-              className="w-full px-8 py-3 font-semibold rounded-md dark:bg-amber-400 dark:text-gray-900"
+              type="submit"
+              className="w-full px-8 py-3 font-semibold rounded-md bg-amber-400 text-gray-900"
             >
               Sign in
             </button>
