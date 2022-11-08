@@ -6,9 +6,12 @@
         "img": "https://i.ibb.co/ZGpwPxC/service6.jpg",
         "price": "79.00",
         "description": "Working with Havenly is pretty simple. You start out by taking a survey that will ask you questions about your personal style, then you'll upload photos of the room you want to be decorated. From there, you'll schedule a time to have a complimentary chat with your designer to discuss your likes, dislikes, ideas for the space, and what you need—or, you can fill out a design brief online, if you prefer. After five business days, you'll get two different design concepts for your space, which you'll then rate and provide feedback on for your designer.",
-        "facility": "You want something affordable no matter how big your project is.",
-        "rating": "5"
-            
+        "facility": 
+            {
+                "name": "Havenly",
+                "rating": "5",
+                "details": "You want something affordable no matter how big your project is."
+            }
             
     },
     {
@@ -21,6 +24,7 @@
         "facility": 
             {
                 "name": "Room Lift",
+                "rating": "5",
                 "details": "You like to go through samples IRL, not on a computer."
             }
     },
@@ -34,6 +38,7 @@
         "facility": 
             {
                 "name": "Pottery Barn",
+                "rating": "5",
                 "details": "You want a one-on-one experience at no cost."
             }
     },
@@ -47,6 +52,7 @@
         "facility": 
             {
                 "name": "Spacejoy",
+                "rating": "5",
                 "details": "You are looking for a dedicated service with a money-back guarantee."
             }
     },
@@ -60,6 +66,7 @@
         "facility": 
             {
                 "name": "The Expert",
+                "rating": "5",
                 "details": "You don't have hours to spend on designing your home but won't settle for anything less than perfection."
             }
     },
@@ -73,6 +80,7 @@
         "facility": 
             {
                 "name": "Visual",
+                "rating": "5",
                 "details": "You want to be walked through each space to give your feedback and suggestions on the 3D visual."
             }
     }

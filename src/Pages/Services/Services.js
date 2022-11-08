@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -10,7 +11,9 @@ const Services = () => {
   return (
     <div>
       <h2>services {services.length}</h2>
-      {}
+      {services.map((service) => (
+        <ServiceCard key={service._id} service={service}></ServiceCard>
+      ))}
     </div>
   );
 };
