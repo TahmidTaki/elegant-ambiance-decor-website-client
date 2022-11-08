@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log("event triggered");
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => alert(err.message));
   };
   return (
     <section className="dark:bg-gray-800 dark:text-gray-100">
