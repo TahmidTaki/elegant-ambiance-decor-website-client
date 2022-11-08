@@ -1,0 +1,79 @@
+[
+    {
+        "_id": "635a0c0b64a6d231228942ae",
+        "service_id": "04",
+        "title": "Interior Design",
+        "img": "https://i.ibb.co/ZGpwPxC/service6.jpg",
+        "price": "79.00",
+        "description": "Working with Havenly is pretty simple. You start out by taking a survey that will ask you questions about your personal style, then you'll upload photos of the room you want to be decorated. From there, you'll schedule a time to have a complimentary chat with your designer to discuss your likes, dislikes, ideas for the space, and what you need—or, you can fill out a design brief online, if you prefer. After five business days, you'll get two different design concepts for your space, which you'll then rate and provide feedback on for your designer.",
+        "facility": "You want something affordable no matter how big your project is.",
+        "rating": "5"
+            
+            
+    },
+    {
+        "_id": "635a0c0b64a6d231228942af",
+        "service_id": "05",
+        "title": "Renovation",
+        "img": "https://i.ibb.co/xhc18L7/service1.jpg",
+        "price": "250.00",
+        "description": "Room Lift is more of a boutique mail-order service, started by designer Megan Hersch—if you choose Room Lift, you'll be working with Megan herself to create the room of your dreams. The first step is filling out the service's questionnaire about your style, needs, budget, and more—including uploading photos of your space. You'll also browse through a selection of Pinterest boards organized by style, and select the two that are closest to representing your own personal style. Within three to five days of payment, you'll receive a rough sketch of your floor plan that's not to scale, and you'll fill in the correct measurements in the labeled spaces. In about two weeks, you'll receive a physical Room Lift box, complete with a scaled floor plan, paint chips, fabric, and wallpaper samples, and of course, two (or three, depending on the package you choose) designs worth of physical paper cards with product images, prices, and info on where to buy them—and notes about styling—for you to go through.",
+        "facility": 
+            {
+                "name": "Room Lift",
+                "details": "You like to go through samples IRL, not on a computer."
+            }
+    },
+    {
+        "_id": "635b591a1dafe382a9da8c96",
+        "service_id": "01",
+        "title": "Customize Furniture",
+        "img": "https://i.ibb.co/X4mh3fz/service4.png",
+        "price": "200.00",
+        "description": "We deliver both custom outdoor & indoor furniture based on your preference and requirements. Our professional furniture designers can design customized furniture that meets your individual and specific requirements.If you need space planning assistance, their designers can create a custom floor plan and offer ideas tailored to your space. If you want advice on enhancing your space through finishing touches, you can get style tips and accent recommendations. ",
+        "facility": 
+            {
+                "name": "Pottery Barn",
+                "details": "You want a one-on-one experience at no cost."
+            }
+    },
+    {
+        "_id": "635b5afc1dafe382a9da8c98",
+        "service_id": "02",
+        "title": "Space planning",
+        "img": "https://i.ibb.co/SNqDQg2/service3.jpg",
+        "price": "239.00",
+        "description": "Based on your lifestyle and preferences gathered from our discovery call, we will propose the design styles, mood and feel of the space. This is where we let our imagination run wild and produce a creative concept that is unique and personalised for you. Our designers will ensure that not only is it aesthetically beautiful, but also very practical for your everyday life. The initial design concepts would reflect the connection between all areas of the home. It would be in harmony, rhythm and balance. At this stage, the decision is yours, all we do is provide a glance at what your dream interior design could be.",
+        "facility": 
+            {
+                "name": "Spacejoy",
+                "details": "You are looking for a dedicated service with a money-back guarantee."
+            }
+    },
+    {
+        "_id": "635b5b691dafe382a9da8c99",
+        "service_id": "03",
+        "title": "DIY",
+        "img": "https://i.ibb.co/HryRxYm/service5.png",
+        "price": "100.00",
+        "description": "Basically, it's like online dating, but instead of forming relationships with potential romantic partners, you connect with the world's most talented interior designers, who can do everything from offer advice to help conceptualize specific spaces. I won't do the work for you, I'll just help!",
+        "facility": 
+            {
+                "name": "The Expert",
+                "details": "You don't have hours to spend on designing your home but won't settle for anything less than perfection."
+            }
+    },
+    {
+        "_id": "635b5ba51dafe382a9da8c9a",
+        "service_id": "06",
+        "title": "3D Visuals",
+        "img": "https://i.ibb.co/gDNRNkk/service2.jpg",
+        "price": "20.00",
+        "description": "This is the most exciting part of interior design. Here is where we bring ideas to life. From our space planning layout and design concept, we create a 3D visual of your space. By using modern software, we create a realistic visualisation of your interior spaces. You will be able to see multiple angles of the design with the colours, material, texture, lighting, furniture, decors, etc.",
+        "facility": 
+            {
+                "name": "Visual",
+                "details": "You want to be walked through each space to give your feedback and suggestions on the 3D visual."
+            }
+    }
+]
