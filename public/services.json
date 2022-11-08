@@ -1,6 +1,5 @@
 [
     {
-        "_id": "635a0c0b64a6d231228942ae",
         "service_id": "04",
         "title": "Interior Design",
         "img": "https://i.ibb.co/ZGpwPxC/service6.jpg",
@@ -15,7 +14,6 @@
             
     },
     {
-        "_id": "635a0c0b64a6d231228942af",
         "service_id": "05",
         "title": "Renovation",
         "img": "https://i.ibb.co/xhc18L7/service1.jpg",
@@ -29,7 +27,6 @@
             }
     },
     {
-        "_id": "635b591a1dafe382a9da8c96",
         "service_id": "01",
         "title": "Customize Furniture",
         "img": "https://i.ibb.co/X4mh3fz/service4.png",
@@ -43,7 +40,6 @@
             }
     },
     {
-        "_id": "635b5afc1dafe382a9da8c98",
         "service_id": "02",
         "title": "Space planning",
         "img": "https://i.ibb.co/SNqDQg2/service3.jpg",
@@ -57,7 +53,6 @@
             }
     },
     {
-        "_id": "635b5b691dafe382a9da8c99",
         "service_id": "03",
         "title": "DIY",
         "img": "https://i.ibb.co/HryRxYm/service5.png",
@@ -71,7 +66,6 @@
             }
     },
     {
-        "_id": "635b5ba51dafe382a9da8c9a",
         "service_id": "06",
         "title": "3D Visuals",
         "img": "https://i.ibb.co/gDNRNkk/service2.jpg",
