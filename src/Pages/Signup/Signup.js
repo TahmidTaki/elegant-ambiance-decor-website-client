@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Signup = () => {
+  const { createUser } = useContext(AuthContext);
+
   const handleRegister = (event) => {
     event.preventDefault();
-    console.log("reg clicked");
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const name = form.name.value;
+    if (password.length < 6) {
+      alert("Password should be 6 characters long");
+      return;
+    }
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        user.displayName = name;
+        console.log(user);
+        alert("successfully registered");
+      })
+      .cath((err) => console.error(err));
   };
   return (
     <section>
@@ -46,6 +64,19 @@ const Signup = () => {
                 />
               </div>
               <div>
+                <label for="name" className="block mb-2 text-sm">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your Name"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+                  required
+                />
+              </div>
+              <div>
                 <div className="flex justify-between mb-2">
                   <label for="password" className="text-sm">
                     Password
@@ -55,7 +86,6 @@ const Signup = () => {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="*****"
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
                   required
                 />
