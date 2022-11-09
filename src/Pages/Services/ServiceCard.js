@@ -10,7 +10,7 @@ const ServiceCard = ({ service }) => {
         <img src={img} alt="" />
         {_id} {title} {facility.name}
       </p>
-      <Link to={`/review/${_id}`}>
+      <Link to={`/services/${_id}`}>
         <button>go</button>
       </Link>
     </div>

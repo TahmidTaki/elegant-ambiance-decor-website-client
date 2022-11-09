@@ -22,7 +22,7 @@ const Signup = () => {
         console.log(user);
         alert("successfully registered");
       })
-      .cath((err) => console.error(err));
+      .catch((err) => console.error(err));
   };
   return (
     <section>
@@ -45,13 +45,13 @@ const Signup = () => {
           </div>
           <form
             onSubmit={handleRegister}
-            novalidate=""
+            noValidate=""
             action=""
             className="space-y-12 ng-untouched ng-pristine ng-valid"
           >
             <div className="space-y-4">
               <div>
-                <label for="email" className="block mb-2 text-sm">
+                <label htmlFor="email" className="block mb-2 text-sm">
                   Email address
                 </label>
                 <input
@@ -64,7 +64,7 @@ const Signup = () => {
                 />
               </div>
               <div>
-                <label for="name" className="block mb-2 text-sm">
+                <label htmlFor="name" className="block mb-2 text-sm">
                   Name
                 </label>
                 <input
@@ -78,7 +78,7 @@ const Signup = () => {
               </div>
               <div>
                 <div className="flex justify-between mb-2">
-                  <label for="password" className="text-sm">
+                  <label htmlFor="password" className="text-sm">
                     Password
                   </label>
                 </div>
