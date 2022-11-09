@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useContext(AuthContext);
   return (
     <div className="bg-gray-900">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -14,27 +17,7 @@ const Navbar = () => {
                 title="Our product"
                 className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Product
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Pricing
+                Blogs
               </a>
             </li>
           </ul>
@@ -64,9 +47,37 @@ const Navbar = () => {
             </span>
           </a>
           <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
-            <li>
-              <button className="btn btn-warning">Sign In</button>
-            </li>
+            {user?.uid ? (
+              <>
+                <li>
+                  <Link
+                    to="/myreview"
+                    className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    My Reviews
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    Add Custom Service
+                  </Link>
+                </li>
+                <li>
+                  <button className="btn btn-warning">LogOut</button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login">
+                    <button className="btn btn-warning">Sign In</button>
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
           <div className="ml-auto lg:hidden">
             <button
@@ -146,32 +157,41 @@ const Navbar = () => {
                           title="Our product"
                           className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Product
+                          Blogs
                         </a>
                       </li>
-                      <li>
-                        <a
-                          href="/"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Features
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Pricing
-                        </a>
-                      </li>
-                      <li>
-                        <button className="btn btn-warning">Sign In</button>
-                      </li>
+
+                      {user?.uid ? (
+                        <>
+                          <li>
+                            <Link
+                              to="/myreview"
+                              className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              My Reviews
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/"
+                              className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Add Custom Service
+                            </Link>
+                          </li>
+                          <li>
+                            <button className="btn btn-warning">LogOut</button>
+                          </li>
+                        </>
+                      ) : (
+                        <>
+                          <li>
+                            <Link to="/login">
+                              <button className="btn btn-warning">Sign In</button>
+                            </Link>
+                          </li>
+                        </>
+                      )}
                     </ul>
                   </nav>
                 </div>

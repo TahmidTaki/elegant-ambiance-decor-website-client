@@ -3,6 +3,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Review from "../../Pages/Review/Review";
 import Signup from "../../Pages/Signup/Signup";
+import UserSpecificReview from "../../Pages/UserSpecificReview/UserSpecificReview";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: "/services/:id",
         element: <Review></Review>,
         loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/myreview",
+        element: <UserSpecificReview></UserSpecificReview>,
       },
     ],
   },
