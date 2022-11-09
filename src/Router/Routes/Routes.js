@@ -1,4 +1,5 @@
 import Main from "../../Layouts/Main";
+import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Review from "../../Pages/Review/Review";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/myreview",
         element: <UserSpecificReview></UserSpecificReview>,
+      },
+      {
+        path: "/addservice",
+        element: <AddService></AddService>,
       },
       {
         path: "/editReview/:id",

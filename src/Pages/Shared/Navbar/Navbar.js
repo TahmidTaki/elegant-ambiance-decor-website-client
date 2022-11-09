@@ -59,7 +59,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="/"
+                    to="/addservice"
                     className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
                     Add Custom Service
@@ -173,7 +173,7 @@ const Navbar = () => {
                           </li>
                           <li>
                             <Link
-                              to="/"
+                              to="/addservice"
                               className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                               Add Custom Service

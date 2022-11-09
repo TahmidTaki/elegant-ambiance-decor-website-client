@@ -1,7 +1,8 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 
 const EditReview = () => {
+  const navigate = useNavigate();
   const review = useLoaderData();
   const id = review._id;
   console.log(id);
@@ -18,13 +19,16 @@ const EditReview = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.modifiedCount > 0) {
+          alert("Data Successfully Updated");
+        }
       });
   };
 
   return (
     <div>
       <div className="w-full">
-        <div className="relative flex flex-col items-center gap-4 p-6 rounded-md shadow-md sm:py-8 sm:px-12 bg-gray-900 dark:text-gray-100">
+        <div className="flex flex-col items-center gap-4 p-6 rounded-md shadow-md sm:py-8 sm:px-12 bg-gray-900 dark:text-gray-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
