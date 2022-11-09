@@ -2,7 +2,8 @@ import Main from "../../Layouts/Main";
 import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
-import Review from "../../Pages/Review/Review";
+import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
+// import Review from "../../Pages/Review/Review";
 import Signup from "../../Pages/Signup/Signup";
 import EditReview from "../../Pages/UserSpecificReview/EditReview/EditReview";
 import UserSpecificReview from "../../Pages/UserSpecificReview/UserSpecificReview";
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: <Review></Review>,
+        element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
       },
       {

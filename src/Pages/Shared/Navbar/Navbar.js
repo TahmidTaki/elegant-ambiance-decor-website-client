@@ -4,7 +4,16 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log(user.uid);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="bg-gray-900">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -66,7 +75,9 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <button className="btn btn-warning">LogOut</button>
+                  <button onClick={handleLogOut} className="btn btn-warning">
+                    LogOut
+                  </button>
                 </li>
               </>
             ) : (
@@ -180,7 +191,9 @@ const Navbar = () => {
                             </Link>
                           </li>
                           <li>
-                            <button className="btn btn-warning">LogOut</button>
+                            <button onClick={handleLogOut} className="btn btn-warning">
+                              LogOut
+                            </button>
                           </li>
                         </>
                       ) : (

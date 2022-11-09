@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, googleLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,9 +18,24 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         alert(`successfully logged in`);
+        navigate(from, { replace: true });
       })
       .catch((err) => alert(err.message));
   };
+
+  /* social sign in */
+  const handleGoogleSignIn = () => {
+    googleLogin()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .then((err) => {
+        // console.log(err);
+      });
+  };
+
   return (
     <section className="dark:bg-gray-800 dark:text-gray-100">
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
@@ -37,6 +56,7 @@ const Login = () => {
           </p>
           <div className="my-6 space-y-4">
             <button
+              onClick={handleGoogleSignIn}
               aria-label="Login with Google"
               type="button"
               className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-amber-400"

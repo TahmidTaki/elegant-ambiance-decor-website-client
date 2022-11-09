@@ -1,10 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
-const Review = () => {
+const ServiceDetails = () => {
   const service = useLoaderData();
   const { user } = useContext(AuthContext);
+
+  /* load reviews for this service */
+  const [serviceReview, setServiceReview] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/servicereviews/${service._id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setServiceReview(data);
+        console.log(data);
+      });
+  }, [service]);
+  /* load reviews for this service ends */
 
   const handleAddReview = (event) => {
     event.preventDefault();
@@ -54,12 +67,23 @@ const Review = () => {
         </h2>
       </div>
 
-      {/* service reviews */}
-      <div>
+      {/* ===========================================
+                  service reviews 
+      ==============================================*/}
+      <div className="my-8">
         <h3>this is service review</h3>
+        {serviceReview.map((rev) => (
+          <>
+            <h3>Reviewer name: {rev.reviewer}</h3>
+            <h3>Message: {rev.message}</h3>
+            <img src={rev.reviewerImg} alt="" className="w-8 h-8" />
+          </>
+        ))}
       </div>
 
-      {/* add review */}
+      {/* ===========================================
+                  add review
+      ==============================================*/}
       <div className="flex max-w-screen mx-auto p-8 shadow-sm rounded-xl lg:p-12 bg-gray-900 dark:text-gray-100">
         <div className="flex flex-col items-center w-full">
           <h2 className="text-3xl font-semibold text-center">Your opinion matters!</h2>
@@ -159,4 +183,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default ServiceDetails;
