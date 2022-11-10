@@ -5,14 +5,17 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const handleLogOut = () => {
+    setLoading(true);
     logOut()
       .then(() => {
-        console.log(user.uid);
         alert(`We are sorry to see you go..!!`);
+        setLoading(false);
+        window.location.reload(false);
         navigate("/login");
       })
       .catch((err) => {
@@ -33,6 +36,11 @@ const Navbar = () => {
               >
                 Blogs
               </Link>
+            </li>
+            <li>
+              {loading && (
+                <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-amber-400"></div>
+              )}
             </li>
           </ul>
           <Link

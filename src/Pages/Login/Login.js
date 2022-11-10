@@ -1,14 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import register from "../../../src/assets/38435-register.gif";
+import useTitle from "../../Hooks/useTitle";
+
 const Login = () => {
   const { login, googleLogin } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
+
+  useTitle("Login");
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
+    setLoading(true);
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -18,6 +24,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         alert(`successfully logged in`);
+        setLoading(false);
         navigate(from, { replace: true });
       })
       .catch((err) => alert(err.message));
@@ -25,10 +32,12 @@ const Login = () => {
 
   /* social sign in */
   const handleGoogleSignIn = () => {
+    setLoading(true);
     googleLogin()
       .then((res) => {
         const user = res.user;
         console.log(user);
+        setLoading(false);
         navigate(from, { replace: true });
       })
       .then((err) => {
@@ -38,6 +47,9 @@ const Login = () => {
 
   return (
     <section className="dark:bg-gray-800 dark:text-gray-100">
+      {loading && (
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-amber-400"></div>
+      )}
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-around">
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
           <img

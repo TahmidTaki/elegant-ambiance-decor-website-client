@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
+import useTitle from "../../Hooks/useTitle";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useTitle("Services");
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
-      .then((data) => setServices(data));
+      .then((data) => {
+        setServices(data);
+        setLoading(false);
+      });
   }, []);
   return (
     <div className="bg-slate-800">
+      {loading && (
+        <div className="w-16 h-16 mx-auto border-4 border-dashed rounded-full animate-spin border-amber-400"></div>
+      )}
       <div className="relative bg-gray-900">
         <div className="absolute inset-x-0 bottom-0">
           <svg

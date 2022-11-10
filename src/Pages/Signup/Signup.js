@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 
 const Signup = () => {
   const { createUser } = useContext(AuthContext);
-
+  const [loading, setLoading] = useState(false);
+  useTitle("register");
   const handleRegister = (event) => {
+    setLoading(true);
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -21,6 +24,7 @@ const Signup = () => {
         user.displayName = name;
         console.log(user);
         alert("successfully registered");
+        setLoading(false);
       })
       .catch((err) => console.error(err));
   };
@@ -90,6 +94,9 @@ const Signup = () => {
                 />
               </div>
             </div>
+            {loading && (
+              <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-amber-400"></div>
+            )}
             <div className="space-y-2">
               <div>
                 <button
