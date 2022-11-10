@@ -5,6 +5,7 @@ import Login from "../../Pages/Login/Login";
 import AddServiceProtected from "../../Pages/Protected/AddServiceProtected";
 import MyReviewProtected from "../../Pages/Protected/MyReviewProtected";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
+import Services from "../../Pages/Services/Services";
 // import Review from "../../Pages/Review/Review";
 import Signup from "../../Pages/Signup/Signup";
 import EditReview from "../../Pages/UserSpecificReview/EditReview/EditReview";
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "/allservices",
+        element: <Services></Services>,
       },
       {
         path: "/services/:id",

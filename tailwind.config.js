@@ -34,5 +34,5 @@ module.exports = {
       stone: colors.stone,
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui", "@tailwindcss/line-clamp")],
 };

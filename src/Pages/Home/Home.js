@@ -31,7 +31,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <Link>
+      <Link to={"allservices"}>
         <button>Button Services</button>
       </Link>
     </div>

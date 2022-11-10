@@ -2,17 +2,48 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  const { _id, title, description, facility, img } = service;
+  const { _id, title, description, facility, img, price } = service;
+
+  /*  const mystyle = {
+    backgroundImage: `url(${img})`,
+    backgroundPosition: "center center",
+    backgroundBlendMode: "multiply",
+    backgroundSize: "cover",
+  }; */
   return (
     <div>
-      <h2>service card</h2>
-      <p>
-        <img src={img} alt="" />
-        {_id} {title} {facility.name}
-      </p>
-      <Link to={`/services/${_id}`}>
-        <button>go</button>
-      </Link>
+      <article className="group mt-4">
+        <img
+          alt="Lava"
+          src={img}
+          className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%] dark:shadow-gray-700/25"
+        />
+
+        <div className="p-4">
+          <h3 className="text-lg font-medium ">{title}</h3>
+
+          <p className="mt-2 text-sm leading-relaxed  line-clamp-3 ">
+            {description.slice(0, 100)}
+            <span>...</span>
+          </p>
+          <ul className="steps pb-4">
+            <li data-content="$" className="step step-neutral">
+              Price: {price}
+              {"$"}
+            </li>
+            <li data-content="★" className="step step-neutral">
+              Rated {facility.rating}
+            </li>
+          </ul>
+          <Link
+            to={`/services/${_id}`}
+            className="block rounded-lg w-3/5 mx-auto bg-yellow-400 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-500"
+          >
+            Read More
+          </Link>
+        </div>
+        <hr class="my-8 h-px bg-amber-700 border-0 "></hr>
+      </article>
     </div>
   );
 };
