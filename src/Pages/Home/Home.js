@@ -230,7 +230,7 @@ const Home = () => {
                 What is home decoration??
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                <hr class="my-8 h-px bg-amber-700 border-0 "></hr>
+                <hr className="my-8 h-px bg-amber-700 border-0 "></hr>
                 Home decoration is mostly small touches that change the vibe in the house with some
                 accessories, sometimes paintings. Sometimes it is an area where the spirit of the
                 house is determined by taking professional help while designing the house from
@@ -241,7 +241,7 @@ const Home = () => {
               <summary className="px-4 py-6 focus:outline-none focus-visible:ring-amber-400">
                 How can I decide on the style I want in home decoration??
               </summary>
-              <hr class="my-8 h-px bg-amber-700 border-0 "></hr>
+              <hr className="my-8 h-px bg-amber-700 border-0 "></hr>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
                 The important thing here, of course, is personal preference. If you are someone who
                 likes a white and simple finish, you can choose Scandinavian minimalism. If you want
@@ -258,7 +258,7 @@ const Home = () => {
               <summary className="px-4 py-6 focus:outline-none focus-visible:ring-amber-400">
                 How can I make my house look more expensive and luxurious??
               </summary>
-              <hr class="my-8 h-px bg-amber-700 border-0 "></hr>
+              <hr className="my-8 h-px bg-amber-700 border-0 "></hr>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
                 White walls always evoke a luxurious look. Playing with colors is much easier when
                 placing furniture inside white walls. Also, when you say white wall, you don't have

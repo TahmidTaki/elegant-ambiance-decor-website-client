@@ -34,7 +34,8 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    setLoading(true);
+    // setLoading(true);
+    localStorage.removeItem("elegantToken");
     return signOut(auth);
   };
 

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import register from "../../../src/assets/38435-register.gif";
 import useTitle from "../../Hooks/useTitle";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { login, googleLogin } = useContext(AuthContext);
@@ -23,9 +24,30 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        alert(`successfully logged in`);
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Logged in.",
+          showConfirmButton: true,
+        });
         setLoading(false);
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+        //get jwt token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("elegantToken", data.token);
+
+            navigate(from, { replace: true });
+          });
       })
       .catch((err) => alert(err.message));
   };
@@ -38,9 +60,10 @@ const Login = () => {
         const user = res.user;
         console.log(user);
         setLoading(false);
+
         navigate(from, { replace: true });
       })
-      .then((err) => {
+      .catch((err) => {
         // console.log(err);
       });
   };

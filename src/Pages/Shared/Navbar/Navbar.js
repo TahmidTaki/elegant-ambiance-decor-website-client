@@ -2,6 +2,9 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { useLocation } from "react-router-dom";
+import { FaPaintRoller } from "react-icons/fa";
+import Swal from "sweetalert2";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
@@ -9,11 +12,16 @@ const Navbar = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
+
   const handleLogOut = () => {
     setLoading(true);
     logOut()
       .then(() => {
-        alert(`We are sorry to see you go..!!`);
+        Swal.fire({
+          icon: "error",
+          title: "I am sorry to see you go, try again",
+          text: "Visit again!",
+        });
         setLoading(false);
         window.location.reload(false);
         navigate("/login");
@@ -49,21 +57,7 @@ const Navbar = () => {
             title="Company"
             className="inline-flex items-center lg:mx-auto"
           >
-            <svg
-              className="w-8 text-teal-accent-400"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12" />
-              <rect x="3" y="17" width="7" height="6" />
-              <rect x="14" y="1" width="7" height="6" />
-              <rect x="14" y="11" width="7" height="12" />
-            </svg>
+            <FaPaintRoller />
             <span className="ml-2 text-xl font-bold tracking-wide  uppercase">
               Elegant Ambiance
             </span>
@@ -130,31 +124,17 @@ const Navbar = () => {
                 <div className="p-5 bg-black border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
                         aria-label="Company"
                         title="Company"
                         className="inline-flex items-center"
                       >
-                        <svg
-                          className="w-8 "
-                          viewBox="0 0 24 24"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeMiterlimit="10"
-                          stroke="currentColor"
-                          fill="none"
-                        >
-                          <rect x="3" y="1" width="7" height="12" />
-                          <rect x="3" y="17" width="7" height="6" />
-                          <rect x="14" y="1" width="7" height="6" />
-                          <rect x="14" y="11" width="7" height="12" />
-                        </svg>
+                        <FaPaintRoller />
                         <span className="ml-2 text-xl font-bold tracking-wide  uppercase">
                           Elegant Ambiance
                         </span>
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <button

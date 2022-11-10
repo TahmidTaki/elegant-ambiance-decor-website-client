@@ -57,7 +57,7 @@ const AddService = () => {
           <div className="flex flex-wrap justify-center">
             <button
               type="button"
-              className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50"
+              className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50 btn-disabled"
             >
               Get started
             </button>
@@ -68,11 +68,11 @@ const AddService = () => {
         <section className="relative flex flex-wrap lg:h-screen lg:items-center">
           <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
             <div className="mx-auto max-w-lg text-center">
-              <h1 className="text-2xl font-bold sm:text-3xl">Get up today!</h1>
+              <h1 className="text-2xl font-bold sm:text-3xl">Please Fill Up Carefully!</h1>
 
               <p className="mt-4 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla eaque error
-                neque ipsa culpa autem, at itaque nostrum!
+                Successful Creation of Your Service Plan Will Be Added In My Sites Main Page, All
+                the Best.
               </p>
             </div>
 
@@ -192,7 +192,7 @@ const AddService = () => {
               <div className=" justify-between">
                 <button
                   type="submit"
-                  className="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                  className="ml-3 inline-block rounded-lg btn btn-success px-5 py-3"
                 >
                   Add Service
                 </button>
