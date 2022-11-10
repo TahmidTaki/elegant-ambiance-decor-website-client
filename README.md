@@ -1,6 +1,13 @@
 # Elegant Ambiance Service Review Website
 
-The live site can be visited [Here](https://github.com/facebook/create-react-app).
+The live site can be visited [Here](https://elegant-ambiance.web.app/).
+
+### `Technologies Used`
+
+- ReactJS (React Router Dom, Custom Hook, UseEffect etc.)
+- MongoDB (CRUD operation with JWT verification)
+- Tailwind CSS, Tailwind Component Libraries (For Design)
+- NodeJS, ExpressJS (For Backend Functionality)
 
 ## Project Functionalities
 
@@ -25,5 +32,3 @@ The live site can be visited [Here](https://github.com/facebook/create-react-app
 - User can modify his review or delete is. All operations are done through MongoDB, express and node.js
 
 - User can create own custom service through putting all the relevant information.
-
-### `Technologies Used`
