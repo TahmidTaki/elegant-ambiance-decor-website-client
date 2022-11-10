@@ -12,7 +12,6 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <h2>Home</h2>
       <section>
         <div className="bg-amber-300">
           <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
@@ -31,8 +30,16 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <Link to={"allservices"}>
-        <button>Button Services</button>
+
+      <Link
+        to={"allservices"}
+        className="group relative inline-block focus:outline-none focus:ring focus:ring-yellow-400"
+      >
+        <span className="relative z-10 block rounded bg-yellow-700 px-12 py-3 text-sm font-medium text-white transition group-hover:scale-105">
+          View All Services
+        </span>
+
+        <span className="absolute inset-0 -rotate-3 scale-105 rounded bg-yellow-700/25 transition group-hover:rotate-0"></span>
       </Link>
     </div>
   );

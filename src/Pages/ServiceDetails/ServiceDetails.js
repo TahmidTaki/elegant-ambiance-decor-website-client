@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
+  const { _id, title, description, facility, img, price } = service;
   const { user } = useContext(AuthContext);
 
   /* load reviews for this service */
@@ -54,6 +55,7 @@ const ServiceDetails = () => {
         if (data.acknowledged) {
           alert("review added");
           form.reset();
+          window.location.reload(false);
         }
       })
       .catch((err) => console.error(err));
@@ -65,21 +67,123 @@ const ServiceDetails = () => {
         <h2>
           service detail section of {service._id} & {service.title}
         </h2>
+        <div className="relative flex flex-col-reverse py-8 lg:py-16 lg:pt-0 lg:flex-col lg:pb-0">
+          <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+            <svg
+              className="absolute left-0 hidden h-full text-amber-900 transform -translate-x-1/2 lg:block"
+              viewBox="0 0 100 100"
+              fill="currentColor"
+              preserveAspectRatio="none slice"
+            >
+              <path d="M50 0H100L50 100H0L50 0Z" />
+            </svg>
+            <img
+              className="hidden lg:block object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+              src={img}
+              alt=""
+            />
+          </div>
+          <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+            <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+              <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-yellow-600">
+                {facility.name}
+              </p>
+              <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight  sm:text-4xl sm:leading-none">
+                {title}
+              </h2>
+              <p className="pr-5 p-5 mb-5 rounded-lg text-base md:text-lg border border-yellow-900 lg:border-0">
+                <img
+                  src={img}
+                  className="object-cover w-full h-56 rounded shadow-lg mb-2 lg:hidden"
+                  alt=""
+                />
+
+                {description}
+              </p>
+              <div className="alert alert-warning shadow-lg">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="stroke-current flex-shrink-0 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>Good For You If You {facility.details}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul className="steps steps-vertical lg:steps-horizontal mx-auto">
+          <li className="step step-primary">Choose plan</li>
+          <li className="step step-primary">This Service Rating:{facility.rating}</li>
+          <li className="step">Set Budget: ${price}</li>
+          <li className="step">Receive My Decor Service</li>
+        </ul>
       </div>
 
       {/* ===========================================
                   service reviews 
       ==============================================*/}
-      <div className="my-8">
-        <h3>this is service review</h3>
-        {serviceReview.map((rev) => (
-          <>
-            <h3>Reviewer name: {rev.reviewer}</h3>
-            <h3>Message: {rev.message}</h3>
-            <img src={rev.reviewerImg} alt="" className="w-8 h-8" />
-          </>
-        ))}
-      </div>
+      <section className="my-8 dark:bg-gray-800 dark:text-gray-100">
+        <div className="container flex flex-col items-center mx-auto mb-12 md:p-10 md:px-12">
+          <h1 className="p-4 text-4xl font-semibold  text-center">
+            What our customers are saying about my{" "}
+            <span className="bg-yellow-600 text-slate-800 text-3xl px-2 italic rounded-lg">
+              {service.title}
+            </span>{" "}
+            service
+          </h1>
+        </div>
+        <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
+          {serviceReview.map((rev) => (
+            <div className="flex flex-col w-80 min-h-80 mx-4 my-6 shadow-lg">
+              <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-900">
+                <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    fill="currentColor"
+                    className="w-8 h-8 text-amber-400"
+                  >
+                    <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
+                    <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
+                  </svg>
+                  {rev.message}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    fill="currentColor"
+                    className="absolute right-0 w-8 h-8 text-amber-400"
+                  >
+                    <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
+                    <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
+                  </svg>
+                </p>
+              </div>
+              <div className="flex flex-col items-center justify-center p-8 rounded-b-lg bg-amber-400 text-gray-900">
+                <img
+                  src={rev.reviewerImg}
+                  alt=""
+                  className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700"
+                />
+                <p className="text-xl font-semibold leading-tight">{rev.reviewer}</p>
+                <p className="text-sm uppercase">{rev.email}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* ===========================================
+                  service reviews ends
+      ==============================================*/}
 
       {/* ===========================================
                   add review

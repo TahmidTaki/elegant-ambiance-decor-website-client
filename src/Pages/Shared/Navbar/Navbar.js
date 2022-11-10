@@ -35,8 +35,8 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <a
-            href="/"
+          <Link
+            to="/"
             aria-label="Company"
             title="Company"
             className="inline-flex items-center lg:mx-auto"
@@ -59,7 +59,7 @@ const Navbar = () => {
             <span className="ml-2 text-xl font-bold tracking-wide  uppercase">
               Elegant Ambiance
             </span>
-          </a>
+          </Link>
           <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
             {user?.uid ? (
               <>
