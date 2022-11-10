@@ -2,6 +2,8 @@ import Main from "../../Layouts/Main";
 import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
+import AddServiceProtected from "../../Pages/Protected/AddServiceProtected";
+import MyReviewProtected from "../../Pages/Protected/MyReviewProtected";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 // import Review from "../../Pages/Review/Review";
 import Signup from "../../Pages/Signup/Signup";
@@ -34,11 +36,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/myreview",
-        element: <UserSpecificReview></UserSpecificReview>,
+        element: (
+          <MyReviewProtected>
+            <UserSpecificReview></UserSpecificReview>
+          </MyReviewProtected>
+        ),
       },
       {
         path: "/addservice",
-        element: <AddService></AddService>,
+        element: (
+          <AddServiceProtected>
+            <AddService></AddService>
+          </AddServiceProtected>
+        ),
       },
       {
         path: "/editReview/:id",

@@ -31,10 +31,16 @@ const UserSpecificReview = () => {
   };
   return (
     <div>
-      <h2>My review: {reviews.length}</h2>
-      {reviews.map((review) => (
-        <ReviewInfo key={review._id} review={review} handleDelete={handleDelete}></ReviewInfo>
-      ))}
+      {reviews.length === 0 ? (
+        <h2>No Reviews were added by you</h2>
+      ) : (
+        <>
+          <h2>My review: {reviews.length}</h2>
+          {reviews.map((review) => (
+            <ReviewInfo key={review._id} review={review} handleDelete={handleDelete}></ReviewInfo>
+          ))}
+        </>
+      )}
     </div>
   );
 };
