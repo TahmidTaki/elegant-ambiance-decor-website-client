@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "react-photo-view/dist/react-photo-view.css";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const HomeServiceCard = ({ service }) => {
   const { _id, title, description, facility, img, price } = service;
@@ -14,12 +16,19 @@ const HomeServiceCard = ({ service }) => {
       </div>
 
       <div className="hidden sm:block sm:basis-56">
+        <PhotoProvider>
+          <PhotoView src={img}>
+            <img src={img} alt="" className="aspect-square sm:h-full sm:w-full object-cover" />
+          </PhotoView>
+        </PhotoProvider>
+      </div>
+      {/* <div className="hidden sm:block sm:basis-56">
         <img
           alt="serviceImage"
           src={img}
           className="aspect-square sm:h-full sm:w-full object-cover"
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-1 flex-col justify-between">
         <div className="border-l border-white/10 sm:!border-l-transparent sm:p-6">
