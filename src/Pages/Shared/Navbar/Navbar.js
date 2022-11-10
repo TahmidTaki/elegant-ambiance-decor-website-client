@@ -25,14 +25,14 @@ const Navbar = () => {
         <div className="z-10 relative flex grid items-center grid-cols-2 lg:grid-cols-3">
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/blog"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Blogs
-              </a>
+              </Link>
             </li>
           </ul>
           <Link
@@ -167,14 +167,14 @@ const Navbar = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/blog"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Blogs
-                        </a>
+                        </Link>
                       </li>
 
                       {user?.uid ? (

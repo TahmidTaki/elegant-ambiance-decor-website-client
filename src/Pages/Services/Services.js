@@ -24,17 +24,17 @@ const Services = () => {
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
             <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight  sm:text-4xl sm:leading-none">
-              The quick, brown fox
+              FEATURED COLLECTIONS
               <br className="hidden md:block" />
-              jumps over a{" "}
+              INDULGE IN ALL{" "}
               <span className="relative inline-block">
-                lazy dog <div className="w-full h-3 -mt-3 bg-deep-purple-accent-400" />
+                THINGS FESTIVE
+                <div className="w-full h-3 -mt-3 bg-deep-purple-accent-400" />
               </span>
             </h2>
             <p className="mb-6 text-base font-thin tracking-wide  md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-              laudantium, totam rem aperiam, eaque ipsa quae. explicabo. Sed ut perspiciatis unde
-              omnis.
+              I am sharing the latest tips and trends and curated finds on my blog to help you
+              transform your home into a haven that is truly unique to you.
             </p>
           </div>
         </div>
