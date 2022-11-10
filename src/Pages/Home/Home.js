@@ -9,7 +9,7 @@ const Home = () => {
   const [services, setServices] = useState([]);
   useTitle("Home");
   useEffect(() => {
-    fetch("http://localhost:5000/serviceshome")
+    fetch("https://elegant-ambiance-server.vercel.app/serviceshome")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

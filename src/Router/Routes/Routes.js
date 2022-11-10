@@ -43,7 +43,8 @@ const router = createBrowserRouter([
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://elegant-ambiance-server.vercel.app/services/${params.id}`),
       },
       {
         path: "/myreview",
@@ -64,7 +65,8 @@ const router = createBrowserRouter([
       {
         path: "/editReview/:id",
         element: <EditReview></EditReview>,
-        loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://elegant-ambiance-server.vercel.app/reviews/${params.id}`),
       },
     ],
     errorElement: <ErrorPage></ErrorPage>,

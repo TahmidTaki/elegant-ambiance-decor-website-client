@@ -9,7 +9,7 @@ const EditReview = () => {
   const handleEdit = (event) => {
     event.preventDefault();
     const newMessage = event.target.newMessage.value;
-    fetch(`http://localhost:5000/reviews/${id}`, {
+    fetch(`https://elegant-ambiance-server.vercel.app/reviews/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

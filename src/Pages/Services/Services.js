@@ -7,7 +7,7 @@ const Services = () => {
   const [loading, setLoading] = useState(true);
   useTitle("Services");
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://elegant-ambiance-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

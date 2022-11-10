@@ -8,7 +8,7 @@ const UserSpecificReview = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://elegant-ambiance-server.vercel.app/reviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("elegantToken")}`,
       },
@@ -27,7 +27,7 @@ const UserSpecificReview = () => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure to delete this review?");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${_id}`, {
+      fetch(`https://elegant-ambiance-server.vercel.app/reviews/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
