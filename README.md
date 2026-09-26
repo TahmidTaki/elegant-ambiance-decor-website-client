@@ -1,6 +1,7 @@
 # Elegant Ambiance Service Review Website
 
 The live site can be visited [Here](https://elegant-ambiance.web.app/).
+## API Routes are currently not active
 
 ### `Technologies Used`
 
